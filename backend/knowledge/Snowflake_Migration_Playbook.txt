@@ -1,0 +1,10 @@
+Title: Enterprise Snowflake Migration Playbook
+Industry: Cross-industry
+Technologies: Snowflake, Matillion, Great Expectations, dbt
+Deployment Year: 2023
+
+Use Case:
+- Migrate 800 TB on-prem EDW to Snowflake in 6 months
+- Zero-downtime strategy using dual-run period
+- Automated data-quality tests (Great Expectations)
+- dbt Cloud orchestrates 1,200 models

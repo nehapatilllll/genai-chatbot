@@ -1,0 +1,14 @@
+Title: GenAI-Powered Hyper-Personalization Engine
+Industry: Retail & e-Commerce
+Technologies: GPT-4, Pinecone, LangChain, Azure Kubernetes Service
+Deployment Year: 2023
+
+Use Cases:
+- Dynamic email campaigns with 1:1 product descriptions
+- Conversational shopping assistant (web + WhatsApp)
+- Automated SEO content generation for 1.2 M SKU catalog
+
+Business Impact:
+- Email CTR ↑ 32 %
+- Average order value ↑ 18 %
+- Content production cost ↓ 60 %

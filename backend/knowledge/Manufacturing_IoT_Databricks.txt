@@ -1,0 +1,15 @@
+Title: Predictive Maintenance using IoT & Databricks
+Industry: Manufacturing
+Technologies: Azure IoT Hub, Databricks, MLflow, Delta Live Tables
+Deployment Year: 2023
+
+Pain Points:
+- Unplanned downtime costs $50 k/hour
+- Sensor data siloed across 14 plants
+- Manual feature engineering took 6 weeks
+
+Solution:
+- Streaming ingestion of 3 TB/day sensor data
+- Auto-ML in Databricks predicts failures 48 hrs in advance
+- MLflow model registry enables CI/CD across plants
+- Downtime reduced by 22 %

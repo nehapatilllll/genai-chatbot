@@ -1,0 +1,14 @@
+Title: Clinical NLP Platform to Reduce Clinician Burnout
+Industry: Healthcare Providers
+Technologies: spaCy, Hugging Face transformers, Databricks, Delta Lake
+Deployment Year: 2022
+
+Pain Points:
+- Clinicians spend 2.5 hrs/day on documentation
+- ICD-10 coding accuracy < 85 %
+- Missing HCC capture → $12 M annual revenue leakage
+
+Solution:
+- Extracts 47 clinical entities from free-text notes
+- Real-time coding suggestions in Epic
+- Continuous active-learning loop improves F1 by 4 % monthly

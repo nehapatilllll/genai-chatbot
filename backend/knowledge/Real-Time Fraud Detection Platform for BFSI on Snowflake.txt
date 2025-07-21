@@ -1,0 +1,17 @@
+Title: Real-Time Fraud Detection Platform for BFSI on Snowflake
+
+Industry: BFSI (Banking, Financial Services & Insurance)
+Technologies: Snowflake, dbt, Fivetran, AWS Lambda, Python, Kafka
+Deployment Year: 2023
+
+Pain Points Addressed:
+- Legacy on-prem fraud engines could not scale to 10k TPS
+- 4-hour detection latency → losses > $3 M/quarter
+- Regulatory pressure for sub-second SAR filing
+
+Solution Highlights:
+- Snowflake Data Cloud ingests 12 B events/day
+- Real-time dbt models score transactions in < 200 ms
+- Auto-ML pipeline in AWS Lambda retrains nightly
+- Integrated case-management UI reduces false-positive rate by 27 %
+- 100 % SQL-first approach accelerates feature engineering by 40 %
