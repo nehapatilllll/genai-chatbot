@@ -24,8 +24,7 @@ venv/
 .env
 .envrc
 
-# Streamlit
-.streamlit/secrets.toml
+
 
 # IDE
 .vscode/
