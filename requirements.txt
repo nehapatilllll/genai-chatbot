@@ -1,13 +1,11 @@
-# requirements.txt
 streamlit
+openai
 langchain
 langchain-community
-langchain-chroma
-chromadb
 langchain-huggingface
+sentence-transformers
+faiss-cpu
 PyPDF2
 python-docx
-faiss-cpu
 networkx
 tiktoken
-openai

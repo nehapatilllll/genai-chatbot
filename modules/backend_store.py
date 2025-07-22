@@ -1,5 +1,7 @@
 # modules/backend_store.py
-import os, uuid, networkx as nx
+import os
+import uuid
+import networkx as nx
 import streamlit as st
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
@@ -9,7 +11,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 # ------------------------------------------------------------------
 # Config
 # ------------------------------------------------------------------
-BACKEND_INDEX_DIR = "faiss_backend"          # renamed to avoid confusion
+BACKEND_INDEX_DIR = "faiss_backend"        # folder that will hold *.faiss
 EMBEDDING = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 # ------------------------------------------------------------------
@@ -18,7 +20,7 @@ EMBEDDING = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 def get_backend_vectorstore():
     """
     Returns a FAISS vectorstore.
-    If the directory exists → loads it; otherwise → creates an empty one.
+    Loads from disk if exists; otherwise returns a tiny empty store.
     """
     if os.path.isdir(BACKEND_INDEX_DIR):
         return FAISS.load_local(
@@ -26,12 +28,12 @@ def get_backend_vectorstore():
             EMBEDDING,
             allow_dangerous_deserialization=True
         )
-    # Empty store for first run
+    # Empty store for first run (will be overwritten on ingest)
     return FAISS.from_texts(["_init_"], EMBEDDING)
 
 @st.cache_resource
 def get_backend_graph():
-    """Singleton NetworkX graph in session state."""
+    """Singleton NetworkX graph stored in Streamlit session."""
     if "backend_graph" not in st.session_state:
         st.session_state.backend_graph = nx.DiGraph()
     return st.session_state.backend_graph
@@ -55,7 +57,7 @@ def ingest_into_backend(file_obj, filename):
         from docx import Document as DocxDocument
         doc = DocxDocument(file_obj)
         text = "\n".join(p.text for p in doc.paragraphs)
-    else:
+    else:  # TXT
         text = file_obj.read().decode()
 
     if not text.strip():
